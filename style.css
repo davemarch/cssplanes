@@ -2,6 +2,7 @@
     background: green;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 .container{
@@ -46,14 +47,43 @@ img {
 }
 
 #plane1 {
-    transform: rotate(90deg);
     top: 25px;
     left: -150px;
+    animation-name: left-right-takeoff;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;    
+    animation-timing-function: linear;
 }
 
 #plane2 {
-    transform: rotate(270deg);
     top: 550px;
     right: -150px;
+    animation-name: right-left-takeoff;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;    
+    animation-timing-function: linear;
+}
+
+
+
+@keyframes left-right-takeoff{
+    0% {transform: translate(-200px,0px) rotate(90deg);}
+    50% {transform: translate(500px,0px) rotate(90deg) scale(1);} 
+    75% {transform: translate(1000px,0px) rotate(90deg) scale(2);} 
+    100% {transform: translate(2000px,0px) rotate(90deg) scale(3);} 
+ 
+}
+
+@keyframes right-left-takeoff{
+    0% {transform: translate(400px,0px) rotate(270deg) scale(3);}
+    10% {transform: translate(200px,0px)rotate(270deg) scale(2);}
+    20% {transform: translate(000px,0px)rotate(270deg) scale(1);}
+    30% {transform: translate(-100px,0px)rotate(270deg) scale(1.2);}
+    35% {transform: translate(-200px,0px) rotate(270deg) scale(1);}
+    50% {transform: translate(-400px,0px) rotate(270deg);}
+    90% {transform: translate(-400px,-200px) rotate(360deg);}
+    100% {transform: translate(-400px,-250px) rotate(360deg);}
 
 }
