@@ -19,7 +19,7 @@
     height: 80%;
     top: 50%;
     transform: translateY(-50%);
-    border: red solid 2px;
+    /* border: red solid 2px; */
 }
 
 .runway {
